@@ -1,0 +1,28 @@
+﻿<Window x:Class="TDDD49.MainWindowView"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:TDDD49"
+        mc:Ignorable="d"
+        Title="MainWindow" Height="541.808" Width="681.985">
+    <Grid Background="#FF787878">
+
+        <Label Content="Username:" Margin="153,84,0,0" VerticalAlignment="Top" Height="51" FontSize="26" HorizontalAlignment="Left" Width="129"/>
+        <TextBox Margin="366,84,0,0" TextWrapping="Wrap" Text="{Binding Connection.userName, UpdateSourceTrigger=PropertyChanged}" FontSize="20" Height="40" VerticalAlignment="Top" HorizontalAlignment="Left" Width="172"/>
+
+        <Label Content="Listen to port:" HorizontalAlignment="Left" Margin="153,146,0,0" VerticalAlignment="Top" Width="167" RenderTransformOrigin="0.516,-0.074" Height="42" FontSize="26"/>
+        <TextBox Height="40" Margin="366,146,0,0" TextWrapping="Wrap" Text="{Binding Connection.listenPort, UpdateSourceTrigger=PropertyChanged}" VerticalAlignment="Top" FontSize="26" HorizontalAlignment="Left" Width="172"/>
+        <ToggleButton Command="{Binding ListenCommand}" Content="{Binding Connection.DisplayString}" Margin="78,205,64,0" VerticalAlignment="Top" Height="68" FontSize="30" Background="#FFAADCFF" Checked="ToggleButton_Checked"/>
+
+        <Label Content="Connect to IP: " HorizontalAlignment="Left" Margin="153,299,0,0" VerticalAlignment="Top" Height="51" Width="170" FontSize="26"/>
+        <TextBox Margin="366,299,0,0" TextWrapping="Wrap" Text="{Binding Connector.ip, UpdateSourceTrigger=PropertyChanged}" FontSize="26" Height="40" VerticalAlignment="Top" HorizontalAlignment="Left" Width="172"/>
+
+        <Label Content="Connect to Port:" HorizontalAlignment="Left" Margin="130,350,0,0" VerticalAlignment="Top" Height="49" Width="206" FontSize="26"/>
+        <TextBox HorizontalAlignment="Left" Height="40" Margin="366,359,0,0" TextWrapping="Wrap" Text="{Binding Connector.connectPort, UpdateSourceTrigger=PropertyChanged}" VerticalAlignment="Top" Width="172" FontSize="26"/>
+
+        <Button Content="Ping" Command="{Binding PingCommand}" Margin="78,413,64,0" VerticalAlignment="Top" Height="72" FontSize="30" Background="#FFAADCFF"/>
+        <Button Content="Show History" Command="{Binding ShowHistoryCommand}" HorizontalAlignment="Left" Margin="566,10,0,0" VerticalAlignment="Top" Width="98" Height="62"/>
+
+    </Grid>
+</Window>
